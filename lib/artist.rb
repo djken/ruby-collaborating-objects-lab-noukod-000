@@ -8,7 +8,7 @@ class Artist
     @name = name
     @songs = [] # Empty array that receives each each instance
   end
-  
+
   def self.all
     @@all
   end
