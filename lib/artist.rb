@@ -2,14 +2,13 @@ class Artist
 
   attr_accessor :name, :songs
 
-  @@all = [] #array of artists instances
+  @@all = [] # Empty Array that receives all artists instances
 
-  def initialize(name)#artist_name
+  def initialize(name) #initialize each artist name
     @name = name
-    @songs = [] #array of songs for each instance
+    @songs = [] # Empty array that receives each each instance
   end
-
-  #this exposes the @@all Class Variable
+  
   def self.all
     @@all
   end
@@ -39,14 +38,10 @@ class Artist
     artist
   end
 
-
-
   def save
     @@all << self
   end
 
-  #this method prints out an array of song names
-  #by accessing the name attribute of each song
   def print_songs()
     puts @songs.collect {|x| x.name}
   end
