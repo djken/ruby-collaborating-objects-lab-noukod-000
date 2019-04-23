@@ -1,24 +1,24 @@
 # class Artist
 #   attr_accessor :name, :songs
 #   @@all = []
-# 
+#
 #   def initialize(name)
 #     @name = name
 #     @songs = []
 #   end
-# 
+#
 #   def add_song(song)
 #     songs << song
 #   end
-# 
+#
 #   def save
 #     @@all << self
 #   end
-# 
+#
 #   def self.all
 #     @@all
 #   end
-# 
+#
 #   def self.find_or_create_by_name(name)
 #     na = all.detect {|artist| artist.name == name}
 #     return na if na != nil
@@ -26,7 +26,7 @@
 #     artist.save
 #     artist
 #   end
-# 
+#
 #   def print_songs
 #     puts songs.map  {|song| song.name}.join("\n")
 #   end
@@ -34,7 +34,7 @@
 
 class Artist
   attr_accessor :name, :songs
-  @@all = []  #stores all instances of Artist 
+  @@all = []  #stores all instances of Artist
 
   def initialize(name)
     @name = name
@@ -42,20 +42,20 @@ class Artist
   end
 
   def add_song(song)
-    self.songs << song    #Artist.songs reader returns all songs 
+    self.songs << song    #Artist.songs reader returns all songs
                           #stored in @songs
   end
 
   def save
-    @@all << self     #saves all created instances of Artist class in 
+    @@all << self     #saves all created instances of Artist class in
                       #@@all class variable
   end
 
-  def self.all      #class method all returns all instances of Artist class 
+  def self.all      #class method all returns all instances of Artist class
     @@all
   end
 
-  def self.find_or_create_by_name(name)   #class method uses find/create class 
+  def self.find_or_create_by_name(name)   #class method uses find/create class
                                           #methods to detect or create instances
     if self.find(name)
       self.find(name)
